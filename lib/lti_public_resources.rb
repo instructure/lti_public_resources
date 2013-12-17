@@ -1,7 +1,6 @@
 require 'ostruct'
 require 'active_public_resources'
 require 'ims/lti'
-require 'lti_public_resources/config'
 require 'lti_public_resources/lti_public_resources_config'
 
 module LtiPublicResources

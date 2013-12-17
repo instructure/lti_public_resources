@@ -9,7 +9,6 @@ module LtiPublicResources
     end
 
     def self.setup!
-      config = LtiPublicResources::Config
       if File.exists?(config_file)
         Rails.logger.info "Initializing using #{config_file}"
         settings = load_config.deep_symbolize_keys
