@@ -1,0 +1,30 @@
+<style>span { font-weight: bold; }</style>
+<div class="container">
+  <h3>seconds-to-time</h3>
+  <ul id="seconds-to-time">
+    <li class="test-1">
+      <span class="actual">{{seconds-to-time 150}}</span> should be 
+      <span class="should">02:30<span>
+    </li>
+    <li class="test-2">
+      <span class="actual">{{seconds-to-time 0}}</span> should be 
+      <span class="should">00:00<span>
+    </li>
+    <li class="test-3">
+      <span class="actual">{{seconds-to-time 99999}}</span> should be 
+      <span class="should">27:46:39<span>
+    </li>
+  </ul>
+
+  <h3>truncate-text</h3>
+  <ul id="truncate-text">
+    <li class="test-1">
+      <span class="actual">{{truncate-text "abcdefghijklmnopqrstuvwxyz" 10}}</span> should be 
+      <span class="should">abcdefg...</span>
+    </li>
+    <li class="test-2">
+      <span class="actual">{{truncate-text "abcdefghijklmnopqrstuvwxyz" 50}}</span> should be 
+      <span class="should">abcdefghijklmnopqrstuvwxyz</span>
+    </li>
+  </ul>
+</div>

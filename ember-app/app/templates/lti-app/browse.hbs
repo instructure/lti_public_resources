@@ -1,0 +1,37 @@
+<div id="tool-default" class="lti-search">
+  <header class="fixed clearfix"></header>
+
+  <div class="below-search-bar">
+    <div class="above-link">
+      {{#if parentFolder}}
+        <a href="#" {{action goUpFolder}}>&laquo; {{parentFolder}}</a>
+      {{else}}
+        {{#link-to "ltiApps"}}&laquo; dashboard{{/link-to}}
+      {{/if}}
+    </div>
+
+    {{#if isLoaded}}
+
+      <table class="table">
+        <tbody>
+          {{#each folder in folders}}
+            <tr>
+              <td style="width: 25px;"><i class="fa fa-folder"></i></td>
+              <td><a href="#" {{action goToFolder folder}} class="text-info">{{folder.title}}</a></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+      <ul>
+        {{#each item in items}}
+          {{view "li-item" itemBinding="item"}}
+        {{/each}}
+      </ul>
+
+    {{else}}
+      {{ic-spinner}}
+    {{/if}}
+
+  </div>
+</div>

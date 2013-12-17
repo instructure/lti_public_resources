@@ -1,0 +1,28 @@
+<div class="above-link">
+  <a href="#" {{action performSearch}} class="back_button">&laquo; search results</a>
+  {{#each returnType in returnTypes}}
+    {{view "a-embed-item" returnTypeBinding="returnType" itemBinding="model" class="btn-info pull-right"}}
+  {{/each}}
+</div>
+
+<div class="lti-video-embed">
+  <div class="flex-video widescreen clearfix">
+    {{{embedHtml}}}
+  </div>
+  <div class="video data">
+    <h2 class="title">
+      <span class="faux_link">{{title}}</span>
+    </h2>
+    <div class="duration">{{seconds-to-time duration}}</div>
+    <p class="meta">
+      from <span class="username">{{username}}</span> /
+      Added <time>{{video.createdDate}}</time>
+    </p>
+    <p class="count">
+      <span class="plays">{{numViews}} Plays</span> /
+      <span class="likes">{{numLikes}} Likes</span> /
+      <span class="comments">{{numComments}} Comments</span>
+    </p>
+    <p class="description">{{description}}</p>
+  </div>
+</div>

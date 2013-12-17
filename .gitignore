@@ -1,0 +1,18 @@
+.bundle/
+log/*.log
+pkg/
+test/dummy/db/*.sqlite3
+test/dummy/db/*.sqlite3-journal
+test/dummy/log/*.log
+test/dummy/tmp/
+test/dummy/.sass-cache
+config/*.yml
+
+# ember app
+/ember-app/tmp
+/ember-app/dist
+/ember-app/coverage/*
+/ember-app/bower_components/*
+/ember-app/node_modules
+/ember-app/vendor/*
+!/ember-app/vendor/loader.js

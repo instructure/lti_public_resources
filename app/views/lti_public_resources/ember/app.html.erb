@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Public Resources LTI</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/lti_public_resources/assets/app.min.css">
+  
+  <style>
+  /*#wrapper               header { background-image: url('/lti_public_resources/lti_public_resources/assets/images/khan_academy_logo.png') !important; }*/
+  #wrapper .khan_academy header { background-image: url('/lti_public_resources/assets/images/khan_academy_logo.png') !important; }
+  #wrapper .quizlet      header { background-image: url('/lti_public_resources/assets/images/quizlet_logo.png') !important; }
+  #wrapper .youtube      header { background-image: url('/lti_public_resources/assets/images/youtube_logo.png') !important; }
+  #wrapper .vimeo        header { background-image: url('/lti_public_resources/assets/images/vimeo_logo.png') !important; }
+  #wrapper .schooltube   header { background-image: url('/lti_public_resources/assets/images/schooltube_logo.png') !important; }
+  </style>
+
+  <script>
+  window.ENV = <%=raw @env.to_json %>;
+  </script>
+
+  <script src="/lti_public_resources/assets/vendor.min.js"></script>
+
+  <script src="/lti_public_resources/assets/app.min.js"></script>
+
+</head>
+<body>
+  <!--[if lt IE 8]>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser. Please
+      <a href="http://browsehappy.com/">upgrade your browser</a>
+      to improve your experience.
+    </p>
+  <![endif]-->
+
+  <script>
+    window.App = require('appkit/app')["default"].create();
+  </script>
+</body>
+</html>

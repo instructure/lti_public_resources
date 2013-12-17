@@ -1,0 +1,21 @@
+{
+  "name": "ember-app-kit",
+  "dependencies": {
+    "handlebars": "~1.1.2",
+    "jquery": "~1.9.1",
+    "qunit": "~1.12.0",
+    "ember": "~1.2.0",
+    "ember-data": "~1.0.0-beta.3",
+    "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master",
+    "ic-ajax": "~0.2",
+    "components-font-awesome": "~4.0.3",
+    "bootstrap-flatly": "http://netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css",
+    "bootstrap-js": "http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js",
+    "lodash": "~2.4.1",
+    "spin": "http://fgnass.github.io/spin.js/dist/spin.min.js"
+  },
+  "resolutions": {
+    "ember": "~1.2.0",
+    "handlebars": "~1.1.2"
+  }
+}

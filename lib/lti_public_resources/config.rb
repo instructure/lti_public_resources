@@ -1,0 +1,1 @@
+LtiPublicResources::Config = OpenStruct.new

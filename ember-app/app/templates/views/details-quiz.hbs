@@ -1,0 +1,30 @@
+<div class="above-link">
+  <a href="#" {{action performSearch}} class="back_button">&laquo; search results</a>
+  {{#each returnType in returnTypes}}
+    {{view "a-embed-item" returnTypeBinding="returnType" showTooltip="true" itemBinding="model" class="btn-info pull-right"}}</li>
+  {{/each}}
+</div>
+
+{{{embedHref}}}
+
+<hr class="clearfix" />
+
+<div class="video data media-body">
+  <h2 class="title clearfix">
+    {{#link-to "ltiApp.search.details" this classNames="pull-left"}}{{title}}{{/link-to}}
+  </h2>
+  <div class="duration">{{termCount}} terms</div>
+  <p class="meta">
+    {{#if username}}
+      created by <span class="username">{{username}}</span> /
+    {{/if}}
+    Added <time>{{createdDate}}</time>
+  </p>
+  <p class="count">
+    {{#each subject in subjects}}
+      <span class="label label-default">{{subject}}</span>
+    {{/each}}
+  </p>
+
+  <p class="description">{{description}}</p>
+</div>

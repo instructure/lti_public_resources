@@ -1,0 +1,24 @@
+{{#link-to targetRoute item classNames="pull-left"}}
+  <img {{bindAttr src=item.thumbnailUrl}} class="media-object thumbnail thumbnail_med_wide">
+{{/link-to}}
+<div class="video data media-body">
+  <h2 class="title clearfix">
+    {{#link-to targetRoute item classNames="pull-left"}}{{item.title}}{{/link-to}}
+  </h2>
+  <div class="duration">{{seconds-to-time item.duration}}</div>
+  <p class="meta">
+    from <span class="username">{{item.username}}</span> /
+    Added <time>{{item.createdDate}}</time>
+  </p>
+  <p class="count">
+    <span class="plays">{{item.numViews}} Plays</span> /
+    <span class="likes">{{item.numLikes}} Likes</span> /
+    <span class="comments">{{item.numComments}} Comments</span>
+  </p>
+  <p class="description">{{item.shortDescription}}</p>
+  <div class="return-types text-right">
+    {{#each returnType in item.returnTypes}}
+      {{view "a-embed-item" returnTypeBinding="returnType" itemBinding="item"}}
+    {{/each}}
+  </div>
+</div>
