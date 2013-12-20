@@ -1,4 +1,6 @@
 require_dependency "lti_public_resources/application_controller"
+require 'net/http'
+require 'pry'
 
 module LtiPublicResources
   class EmberController < ApplicationController
@@ -13,6 +15,12 @@ module LtiPublicResources
         'LAUNCH_PARAMS' => params.reject!{ |k,v| ['controller','action'].include? k }
       }
       render layout: false
+    end
+
+    def health_check
+      ok = LtiPublicResources.drivers.length == 5
+      head 200 if ok
+      head 500 unless ok
     end
   end
 end
