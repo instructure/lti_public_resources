@@ -10,7 +10,7 @@ LTI Public Resources is an LTI App wrapped in a mountable Rails engine.
 
 Add this line to your application's Gemfile:
 
-    gem 'lti_public_resources', '~> 0.0.1'
+    gem 'lti_public_resources'
 
 And then execute:
 

@@ -6,6 +6,7 @@ test/dummy/db/*.sqlite3-journal
 test/dummy/log/*.log
 test/dummy/tmp/
 test/dummy/.sass-cache
+test/dummy/config/lti_public_resources_config.yml
 config/*.yml
 
 # ember app
