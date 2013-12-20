@@ -42,7 +42,11 @@ module.exports = {
     }, {
       src: ['vendor/**/*.js', 'vendor/**/*.css'],
       dest: 'tmp/result/'
+    }, {
+      src: ['config/**/*.js'],
+      dest: 'tmp/result/'
     }
+
     ]
   },
 
@@ -62,7 +66,27 @@ module.exports = {
         '!**/*.map' // No source maps
       ],
       filter: 'isFile',
-      dest: '../public/lti_public_resources/'
+      dest: 'dist/'
     }]
   },
+
+  distToPipeline: {
+    files: [{
+      expand: true,
+      cwd: 'dist/assets',
+      src: [
+        '*.css'
+      ],
+      filter: 'isFile',
+      dest: '../app/assets/stylesheets/lti_public_resources'
+    },{
+      expand: true,
+      cwd: 'dist/assets',
+      src: [
+        '*.js'
+      ],
+      filter: 'isFile',
+      dest: '../app/assets/javascripts/lti_public_resources'
+    }]
+  }
 };

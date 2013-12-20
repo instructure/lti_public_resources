@@ -7,24 +7,21 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <link rel="stylesheet" href="/lti_public_resources/assets/app.min.css">
-  
+  <%= stylesheet_link_tag "lti_public_resources/application" %>
+
   <style>
-  /*#wrapper               header { background-image: url('/lti_public_resources/lti_public_resources/assets/images/khan_academy_logo.png') !important; }*/
-  #wrapper .khan_academy header { background-image: url('/lti_public_resources/assets/images/khan_academy_logo.png') !important; }
-  #wrapper .quizlet      header { background-image: url('/lti_public_resources/assets/images/quizlet_logo.png') !important; }
-  #wrapper .youtube      header { background-image: url('/lti_public_resources/assets/images/youtube_logo.png') !important; }
-  #wrapper .vimeo        header { background-image: url('/lti_public_resources/assets/images/vimeo_logo.png') !important; }
-  #wrapper .schooltube   header { background-image: url('/lti_public_resources/assets/images/schooltube_logo.png') !important; }
+  #wrapper .khan_academy header { background-image: url('<%= asset_path("lti_public_resources/khan_academy_logo.png") %>') !important; }
+  #wrapper .quizlet      header { background-image: url('<%= asset_path("lti_public_resources/quizlet_logo.png") %>') !important; }
+  #wrapper .youtube      header { background-image: url('<%= asset_path("lti_public_resources/youtube_logo.png") %>') !important; }
+  #wrapper .vimeo        header { background-image: url('<%= asset_path("lti_public_resources/vimeo_logo.png") %>') !important; }
+  #wrapper .schooltube   header { background-image: url('<%= asset_path("lti_public_resources/schooltube_logo.png") %>') !important; }
   </style>
 
   <script>
   window.ENV = <%=raw @env.to_json %>;
   </script>
 
-  <script src="/lti_public_resources/assets/vendor.min.js"></script>
-
-  <script src="/lti_public_resources/assets/app.min.js"></script>
+  <%= javascript_include_tag "lti_public_resources/application" %>
 
 </head>
 <body>

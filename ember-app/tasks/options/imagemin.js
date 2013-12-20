@@ -2,9 +2,9 @@ module.exports = {
   dist: {
     files: [{
       expand: true,
-      cwd: 'tmp/result',
+      cwd: 'tmp/result/assets/images',
       src: '**/*.{png,gif,jpg,jpeg}',
-      dest: '../public/lti_public_resources/'
+      dest: '../app/assets/images/lti_public_resources/'
     }]
   }
 };

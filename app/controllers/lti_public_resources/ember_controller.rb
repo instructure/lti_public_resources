@@ -1,6 +1,4 @@
 require_dependency "lti_public_resources/application_controller"
-require 'net/http'
-require 'pry'
 
 module LtiPublicResources
   class EmberController < ApplicationController
@@ -9,7 +7,7 @@ module LtiPublicResources
       @env = { 
         'CONFIG' => { 
           host: @full_path,
-          imagePath: '/lti_public_resources/assets/images'
+          imagePath: '/assets/lti_public_resources'
         },
         'TOOL_ID' => params[:tool_id] || '',
         'LAUNCH_PARAMS' => params.reject!{ |k,v| ['controller','action'].include? k }
