@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lti_public_resources (0.0.6)
+    lti_public_resources (0.1.0)
       active_public_resources (~> 0.0.5)
       ims-lti
       rails (~> 4.0.2)
@@ -68,9 +68,9 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (4.7.5)
-    multi_json (1.8.2)
+    multi_json (1.8.4)
     multi_xml (0.5.5)
-    multipart-post (1.2.0)
+    multipart-post (2.0.0)
     oauth (0.4.7)
     polyglot (0.3.3)
     pry (0.9.12.4)
