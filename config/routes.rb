@@ -7,5 +7,5 @@ LtiPublicResources::Engine.routes.draw do
   post 'api/search' => 'api#search'
   post 'api/browse' => 'api#browse'
   post 'api/embed' => 'api#embed'
-  get  'config.xml' => 'api#config'
+  get  'config(.xml)' => 'api#xml_config'
 end

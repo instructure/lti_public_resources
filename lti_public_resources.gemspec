@@ -14,11 +14,12 @@ Gem::Specification.new do |s|
   s.description = "Public Resources LTI app"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 4.0.2"
   s.add_dependency "active_public_resources", "~> 0.0.5"
   s.add_dependency "ims-lti"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'rspec-rails'
 end

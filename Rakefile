@@ -14,14 +14,15 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-APP_RAKEFILE = File.expand_path("../test/dummy/Rakefile", __FILE__)
+APP_RAKEFILE = File.expand_path("../spec/test_app/Rakefile", __FILE__)
 load 'rails/tasks/engine.rake'
 
 Bundler::GemHelper.install_tasks
 
-task :console do
-  require 'pry'
-  require 'lti_public_resources'
-  ARGV.clear
-  Pry.start
-end
+Dir[File.join(File.dirname(__FILE__), 'tasks/**/*.rake')].each {|f| load f }
+
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec

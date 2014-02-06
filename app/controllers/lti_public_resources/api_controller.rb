@@ -60,7 +60,7 @@ module LtiPublicResources
       render json: ret
     end
 
-    def config
+    def xml_config
       host = request.scheme + "://" + request.host_with_port + request.env['SCRIPT_NAME']
       tool_id = 'public_resources'
 
@@ -84,12 +84,13 @@ module LtiPublicResources
       tc.description = description
       tc.extend IMS::LTI::Extensions::Canvas::ToolConfig
       tc.canvas_privacy_anonymous!
-      tc.canvas_domain! request.host_with_port tc.canvas_text! text
+      tc.canvas_domain! request.host_with_port
+      tc.canvas_text! text
       tc.canvas_icon_url! icon
       tc.canvas_selector_dimensions! 560, 600
-      tc.canvas_editor_button!
-      tc.canvas_resource_selection!
-      tc.set_extension_param 'canvas.instructure.com', 'tool_id', tool_id
+      tc.canvas_editor_button!(enabled: true)
+      tc.canvas_resource_selection!(enabled: true)
+      tc.set_ext_param('canvas.instructure.com', :tool_id, tool_id)
 
       render xml: tc.to_xml(:indent => 2)
     end
@@ -105,7 +106,7 @@ module LtiPublicResources
       tp.extend IMS::LTI::Extensions::Content::ToolProvider
       tp
     end
-    
+
     def build_url(tp, return_type)
       if tp.accepts_content?
         case return_type['return_type']
