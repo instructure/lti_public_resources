@@ -62,6 +62,7 @@ module LtiPublicResources
 
     def config
       host = request.scheme + "://" + request.host_with_port + request.env['SCRIPT_NAME']
+      tool_id = 'public_resources'
 
       if params[:id]
         tool_id  = params[:id]
@@ -83,16 +84,16 @@ module LtiPublicResources
       tc.description = description
       tc.extend IMS::LTI::Extensions::Canvas::ToolConfig
       tc.canvas_privacy_anonymous!
-      tc.canvas_domain! request.host_with_port
-      tc.canvas_text! text
+      tc.canvas_domain! request.host_with_port tc.canvas_text! text
       tc.canvas_icon_url! icon
       tc.canvas_selector_dimensions! 560, 600
       tc.canvas_editor_button!
       tc.canvas_resource_selection!
+      tc.set_extension_param 'canvas.instructure.com', 'tool_id', tool_id
 
       render xml: tc.to_xml(:indent => 2)
     end
-      
+
     private
 
     def load_apps
