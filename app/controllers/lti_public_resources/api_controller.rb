@@ -61,7 +61,8 @@ module LtiPublicResources
     end
 
     def xml_config
-      host = request.scheme + "://" + request.host_with_port + request.env['SCRIPT_NAME']
+      script_name = request.env['SCRIPT_NAME']
+      host = request.scheme + "://" + request.host_with_port
       tool_id = 'public_resources'
 
       if params[:id]
@@ -69,15 +70,15 @@ module LtiPublicResources
         lti_app  = @apps[tool_id.to_sym]
         name = lti_app[:name]
         description = lti_app[:description]
-        icon = "#{host}/assets/images/#{lti_app[:icon_path]}"
+        icon = "#{host}/assets#{script_name}/#{lti_app[:icon_path]}"
         text = lti_app[:name]
-        url = host + "/?tool_id=" + tool_id
+        url = "#{host}#{script_name}/?tool_id=#{tool_id}"
       else
         name = "Public Resources"
         description = "Collection of public resources"
-        icon = "#{host}/assets/images/public_resources_icon.png"
+        icon = "#{host}/assets#{script_name}/public_resources_icon.png"
         text = "Public Resources"
-        url = host
+        url = "#{host}#{script_name}"
       end
 
       tc = IMS::LTI::ToolConfig.new(:title => name, :launch_url => url)
