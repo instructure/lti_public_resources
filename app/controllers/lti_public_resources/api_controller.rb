@@ -60,23 +60,25 @@ module LtiPublicResources
       render json: ret
     end
 
-    def config
-      host = request.scheme + "://" + request.host_with_port + request.env['SCRIPT_NAME']
+    def xml_config
+      script_name = request.env['SCRIPT_NAME']
+      host = request.scheme + "://" + request.host_with_port
+      tool_id = 'public_resources'
 
       if params[:id]
         tool_id  = params[:id]
         lti_app  = @apps[tool_id.to_sym]
         name = lti_app[:name]
         description = lti_app[:description]
-        icon = "#{host}/assets/images/#{lti_app[:icon_path]}"
+        icon = "#{host}/assets#{script_name}/#{lti_app[:icon_path]}"
         text = lti_app[:name]
-        url = host + "/?tool_id=" + tool_id
+        url = "#{host}#{script_name}/?tool_id=#{tool_id}"
       else
         name = "Public Resources"
         description = "Collection of public resources"
-        icon = "#{host}/assets/images/public_resources_icon.png"
+        icon = "#{host}/assets#{script_name}/public_resources_icon.png"
         text = "Public Resources"
-        url = host
+        url = "#{host}#{script_name}"
       end
 
       tc = IMS::LTI::ToolConfig.new(:title => name, :launch_url => url)
@@ -87,12 +89,13 @@ module LtiPublicResources
       tc.canvas_text! text
       tc.canvas_icon_url! icon
       tc.canvas_selector_dimensions! 560, 600
-      tc.canvas_editor_button!
-      tc.canvas_resource_selection!
+      tc.canvas_editor_button!(enabled: true)
+      tc.canvas_resource_selection!(enabled: true)
+      tc.set_ext_param('canvas.instructure.com', :tool_id, tool_id)
 
       render xml: tc.to_xml(:indent => 2)
     end
-      
+
     private
 
     def load_apps
@@ -104,7 +107,7 @@ module LtiPublicResources
       tp.extend IMS::LTI::Extensions::Content::ToolProvider
       tp
     end
-    
+
     def build_url(tp, return_type)
       if tp.accepts_content?
         case return_type['return_type']

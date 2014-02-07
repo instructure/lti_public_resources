@@ -2,4 +2,4 @@ language: ruby
 rvm:
   - "2.0.0"
 before_script:
-  - cp config/lti_public_resources_config.yml.example test/dummy/config/lti_public_resources_config.yml
+  - cp config/lti_public_resources_config.yml.example spec/test_app/config/lti_public_resources_config.yml

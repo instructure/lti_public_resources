@@ -11,5 +11,11 @@ module LtiPublicResources
     initializer "lti_public_resources.lti_public_resources_config" do |app|
       LtiPublicResources::LtiPublicResourcesConfig.setup!
     end
+
+    config.generators do |g|
+      g.test_framework :rspec
+      g.assets false
+      g.helper false
+    end
   end
 end
