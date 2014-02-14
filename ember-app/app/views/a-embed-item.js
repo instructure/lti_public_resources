@@ -22,6 +22,8 @@ var AEmbedItemView = Ember.View.extend({
         return 'fa fa-dot-circle-o';
       case 'url':
         return 'fa fa-link';
+      case 'ltiLaunchUrl':
+        return 'fa fa-link';
       default:
         return 'fa fa-caret-square-o-right';
     }

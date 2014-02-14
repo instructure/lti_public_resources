@@ -27,7 +27,6 @@ module LtiPublicResources
           content_filter: APR::RequestCriteria::CONTENT_FILTER_NONE,
           sort: APR::RequestCriteria::SORT_RELEVANCE
         }
-        puts q.inspect
         criteria = APR::RequestCriteria.new(q)
       when 'browse'
         criteria = APR::RequestCriteria.new(folder: params[:folder])
@@ -70,13 +69,13 @@ module LtiPublicResources
         lti_app  = @apps[tool_id.to_sym]
         name = lti_app[:name]
         description = lti_app[:description]
-        icon = "#{host}/assets#{script_name}/#{lti_app[:icon_path]}"
+        icon = "#{host}/assets/lti_public_resources/#{lti_app[:icon_path]}"
         text = lti_app[:name]
         url = "#{host}#{script_name}/?tool_id=#{tool_id}"
       else
         name = "Public Resources"
         description = "Collection of public resources"
-        icon = "#{host}/assets#{script_name}/public_resources_icon.png"
+        icon = "#{host}/assets/lti_public_resources/public_resources_icon.png"
         text = "Public Resources"
         url = "#{host}#{script_name}"
       end
@@ -115,8 +114,9 @@ module LtiPublicResources
             redirect_url = tp.iframe_content_return_url(return_type['url'], return_type['width'], return_type['height'], return_type['title'])
           when 'url'
             redirect_url = tp.url_content_return_url(return_type['url'], return_type['title'])
-          when 'lti_launch'
-            redirect_url = tp.lti_launch_content_return_url(return_type['url'], return_type['title'], return_type['title'])
+          when 'lti_launch_url'
+            url = launch_url(url: return_type['url'])
+            redirect_url = tp.lti_launch_content_return_url(url, return_type['title'], return_type['title'])
         end
         return redirect_url
       end

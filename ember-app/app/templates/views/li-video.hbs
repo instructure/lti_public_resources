@@ -17,7 +17,7 @@
   </p>
   <p class="description">{{item.shortDescription}}</p>
   <div class="return-types text-right">
-    {{#each returnType in item.returnTypes}}
+    {{#each returnType in item.returnableReturnTypes}}
       {{view "a-embed-item" returnTypeBinding="returnType" itemBinding="item"}}
     {{/each}}
   </div>

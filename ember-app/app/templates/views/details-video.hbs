@@ -1,6 +1,7 @@
 <div class="above-link">
   <a href="#" {{action performSearch}} class="back_button">&laquo; search results</a>
   {{#each returnType in returnTypes}}
+    {{log returnType}}
     {{view "a-embed-item" returnTypeBinding="returnType" itemBinding="model" class="btn-info pull-right"}}
   {{/each}}
 </div>
