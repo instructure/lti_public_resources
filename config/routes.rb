@@ -9,4 +9,5 @@ LtiPublicResources::Engine.routes.draw do
   post 'api/embed' => 'api#embed'
   get  'config(.xml)' => 'api#xml_config'
   get  'test/backdoor' => 'test#backdoor'
+  match  'launch' => 'ember#launch', as: :launch, via: [:get, :post]
 end

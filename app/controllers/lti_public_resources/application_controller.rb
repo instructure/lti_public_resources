@@ -1,7 +1,12 @@
 module LtiPublicResources
   class ApplicationController < ActionController::Base
+    before_action :set_default_headers
     before_filter :cors_preflight_check
     after_filter :cors_set_access_control_headers
+
+    def set_default_headers
+      response.headers['X-Frame-Options'] = 'ALLOWALL'
+    end
 
     # For all responses in this controller, return the CORS access control headers.
     def cors_set_access_control_headers

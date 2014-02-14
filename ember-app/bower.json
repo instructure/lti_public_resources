@@ -12,7 +12,7 @@
     "bootstrap-flatly": "http://netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css",
     "bootstrap-js": "http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js",
     "lodash": "~2.4.1",
-    "spin": "http://fgnass.github.io/spin.js/dist/spin.min.js"
+    "spin": "http://fgnass.github.io/spin.js/spin.min.js"
   },
   "resolutions": {
     "ember": "~1.2.0",

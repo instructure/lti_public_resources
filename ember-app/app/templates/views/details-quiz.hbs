@@ -1,7 +1,9 @@
 <div class="above-link">
   <a href="#" {{action performSearch}} class="back_button">&laquo; search results</a>
   {{#each returnType in returnTypes}}
-    {{view "a-embed-item" returnTypeBinding="returnType" showTooltip="true" itemBinding="model" class="btn-info pull-right"}}</li>
+    {{view "a-embed-item" returnTypeBinding="returnType" showTooltip="true" itemBinding="model" class="btn-info pull-right"}}
+  {{else}}
+    LINK TO EMBED PAGE
   {{/each}}
 </div>
 

@@ -26,3 +26,8 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 
 task :default => :spec
+
+desc 'Run the test dummy rails app'
+task :run_engine do
+  exec 'cd spec/test_app && bundle exec rails s'
+end
