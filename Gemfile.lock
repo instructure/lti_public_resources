@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     lti_public_resources (0.1.3)
-      active_public_resources (~> 0.0.5)
+      active_public_resources (~> 0.1.1)
       ims-lti
       rails (~> 4.0.2)
 
@@ -18,7 +18,7 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    active_public_resources (0.0.5)
+    active_public_resources (0.1.1)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       vimeo (~> 1.5.3)
@@ -69,7 +69,7 @@ GEM
       posix-spawn (~> 0.3.6)
     hike (1.2.3)
     hirb (0.7.1)
-    httparty (0.12.0)
+    httparty (0.13.0)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     httpclient (2.3.4.1)
@@ -111,7 +111,7 @@ GEM
       cliver (~> 0.3.1)
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
-    polyglot (0.3.3)
+    polyglot (0.3.4)
     posix-spawn (0.3.8)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -165,7 +165,7 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     slop (3.4.7)
-    sprockets (2.10.1)
+    sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)

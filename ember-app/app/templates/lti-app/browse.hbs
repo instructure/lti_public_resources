@@ -11,23 +11,26 @@
     </div>
 
     {{#if isLoaded}}
+      {{#if isEmptyResults}}
+        <h5 class="text-center">There are no folders or videos available in this folder</h5>
+      {{else}}
+        <table class="table">
+          <tbody>
+            {{#each folder in folders}}
+              <tr>
+                <td style="width: 25px;"><i class="fa fa-folder"></i></td>
+                <td><a href="#" {{action goToFolder folder}} class="text-info">{{folder.title}}</a></td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
 
-      <table class="table">
-        <tbody>
-          {{#each folder in folders}}
-            <tr>
-              <td style="width: 25px;"><i class="fa fa-folder"></i></td>
-              <td><a href="#" {{action goToFolder folder}} class="text-info">{{folder.title}}</a></td>
-            </tr>
+        <ul>
+          {{#each item in items}}
+            {{view "li-item" itemBinding="item"}}
           {{/each}}
-        </tbody>
-      </table>
-
-      <ul>
-        {{#each item in items}}
-          {{view "li-item" itemBinding="item"}}
-        {{/each}}
-      </ul>
+        </ul>
+      {{/if}}
 
     {{else}}
       {{ic-spinner}}

@@ -8,5 +8,7 @@ export default ReturnType.extend({
 
   embedCode: function() {
     this.get('url');
-  }.property('url')
+  }.property('url'),
+
+  displayReturnType: 'Return File'
 });

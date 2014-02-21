@@ -17,12 +17,11 @@ module LtiPublicResources
     end
 
     def launch
-      url = params[:url]
-      if url && url =~ /\Ahttps?:\/\/.+\..+\Z/
-        redirect_to url
-      else
-        head 500
-      end
+      @url = params[:url]
+      @remote_id = params[:remote_id]
+      @driver = params[:driver]
+
+      render partial: @driver, layout: false
     end
 
     def health_check

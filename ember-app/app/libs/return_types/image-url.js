@@ -9,5 +9,8 @@ export default ReturnType.extend({
 
   embedCode: function() {
     return this.get('url');
-  }.property('url')
+  }.property('url'),
+
+  displayReturnType: 'Embed Image'
+
 });

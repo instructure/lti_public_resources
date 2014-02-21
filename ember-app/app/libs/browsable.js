@@ -23,8 +23,7 @@ Browsable.reopenClass({
     browsable = Browsable.create({});
     folderChain = parentFolderChain + '.' + folder;
 
-    // REFACTOR!!!
-    ajax({
+    return ajax({
       type: 'POST',
       url: url,
       dataType: 'json',
@@ -35,7 +34,7 @@ Browsable.reopenClass({
     }).then(function(data) {
       var items = data.driver_response.items;
 
-      return items.forEach(function(item) {
+      items.forEach(function(item) {
         var obj;
         obj = null;
         switch (item.kind) {
@@ -58,19 +57,23 @@ Browsable.reopenClass({
             obj.set('folderChain', folderChain);
             browsable.get('items').pushObject(obj);
             break;
-          case 'exercise':
-            obj = Exercise.createFromData(item);
-            obj.set('folderChain', folderChain);
-            browsable.get('items').pushObject(obj);
-            break;
           default:
             Em.debug('UNKNOWN KIND: ' + item.kind);
         }
       });
+
+      return new Ember.RSVP.Promise(function(resolve, reject) {
+        resolve(browsable);
+        reject(browsable);
+      });
+
     }, function(err) {
       Ember.debug('Error: ' + err);
+      return new Ember.RSVP.Promise(function(resolve, reject) {
+        resolve(browsable);
+        reject(err);
+      });
     });
-    return browsable;
   }
 });
 

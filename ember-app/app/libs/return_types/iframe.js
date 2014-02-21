@@ -9,5 +9,8 @@ export default ReturnType.extend({
 
   embedCode: function() {
     return '<iframe src="' + this.get('url') + '" width="' + this.get('width') + '" height="' + this.get('height') + '" title="' + this.get('title') + '" frameborder="0" allowfullscreen></iframe>';
-  }.property('url', 'title', 'width', 'height')
+  }.property('url', 'title', 'width', 'height'),
+
+  displayReturnType: 'Embed Iframe'
+
 });

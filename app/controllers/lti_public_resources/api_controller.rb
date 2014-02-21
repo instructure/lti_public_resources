@@ -115,7 +115,7 @@ module LtiPublicResources
           when 'url'
             redirect_url = tp.url_content_return_url(return_type['url'], return_type['title'])
           when 'lti_launch_url'
-            url = launch_url(url: return_type['url'])
+            url = launch_url(driver: return_type['driver'], remote_id: return_type['remote_id'], url: return_type['url'])
             redirect_url = tp.lti_launch_content_return_url(url, return_type['title'], return_type['title'])
         end
         return redirect_url

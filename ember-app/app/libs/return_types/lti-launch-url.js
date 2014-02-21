@@ -7,5 +7,6 @@ export default ReturnTypeUrl.extend({
     this.set('return_type', 'lti_launch_url');
   },
 
-  returnType: 'ltiLaunchUrl'
+  returnType: 'ltiLaunchUrl',
+  displayReturnType: 'LTI Launch'
 });
