@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    lti_public_resources (0.1.4)
-      active_public_resources (~> 0.1.1)
+    lti_public_resources (0.1.5)
+      active_public_resources (~> 0.1.2)
       ims-lti
       rails (~> 4.0.2)
 
@@ -18,7 +18,7 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    active_public_resources (0.1.1)
+    active_public_resources (0.1.2)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       vimeo (~> 1.5.3)

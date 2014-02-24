@@ -1,3 +1,6 @@
+analytics: 
+  code: GOOGLE_ANALYTICS_TRACKING_CODE
+  domain: DOMAIN_GOES_HERE
 vimeo:
   consumer_key: 94a35092485388628457c32b5459f4898bb37db4
   consumer_secret: 993565f5df803b5bca88e299ee6a1f7f87a102a0

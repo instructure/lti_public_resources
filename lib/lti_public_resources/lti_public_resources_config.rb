@@ -12,6 +12,8 @@ module LtiPublicResources
       if File.exists?(config_file)
         Rails.logger.info "Initializing using #{config_file}"
         settings = load_config.deep_symbolize_keys
+        LtiPublicResources.ga_tracking_code = settings[:analytics][:code] || ""
+        LtiPublicResources.ga_domain = settings[:analytics][:domain] || ""
         LtiPublicResources.drivers = {
           youtube:      APR::Drivers::Youtube.new,
           vimeo:        APR::Drivers::Vimeo.new(settings[:vimeo]),

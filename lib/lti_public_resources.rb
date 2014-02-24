@@ -4,7 +4,7 @@ require 'ims/lti'
 require 'lti_public_resources/lti_public_resources_config'
 
 module LtiPublicResources
-  mattr_accessor :app_root, :drivers
+  mattr_accessor :app_root, :drivers, :ga_domain, :ga_tracking_code
 
   def self.setup
     yield self

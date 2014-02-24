@@ -1,3 +1,6 @@
+analytics: 
+  code: GOOGLE_ANALYTICS_TRACKING_CODE
+  domain: DOMAIN_GOES_HERE
 vimeo:
   consumer_key: VIMEO_CONSUMER_KEY
   consumer_secret: VIMEO_CONSUMER_SECRET

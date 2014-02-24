@@ -4,6 +4,16 @@ module LtiPublicResources
     before_filter :cors_preflight_check
     after_filter :cors_set_access_control_headers
 
+    def ga_tracking_code
+      LtiPublicResources.ga_tracking_code || ""
+    end
+    helper_method :ga_tracking_code
+
+    def ga_domain
+      LtiPublicResources.ga_domain || ""
+    end
+    helper_method :ga_domain
+
     def set_default_headers
       response.headers['X-Frame-Options'] = 'ALLOWALL'
     end
