@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lti_public_resources (0.1.3)
+    lti_public_resources (0.1.4)
       active_public_resources (~> 0.1.1)
       ims-lti
       rails (~> 4.0.2)
